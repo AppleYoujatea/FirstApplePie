@@ -2,15 +2,26 @@ import Foundation
 
 func solution(_ numbers:[Int]) -> Int {
     var answer = 0
-    var counter = [0, 1, 2, 3,4,5,6,7,8,9]
-    var counter_v = [false, false, false, false, false, false, false, false, false, false]
+    var counter = [
+        0: false,
+        1: false, 
+        2: false, 
+        3: false,
+        4: false, 
+        5: false,
+        6: false,
+        7: false, 
+        8: false,
+        9: false, 
+    ]
+    
     for i in numbers { 
-        counter_v[i] = true
+       counter[i] = true 
     }
     
-    for i in 0..<10{
-        if counter_v[i] {
-            answer += counter[i]
+    for i in 0..<10 {
+        if !counter[i]! {
+            answer += i
         }
     }
     
